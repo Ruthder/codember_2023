@@ -12,12 +12,14 @@ fn main() {
         .map(|word| word.to_lowercase())
         .collect();
 
+    // Init list with the first word
     let mut head = linked_list::WordList{
         value: words.remove(0),
         count: 1,
         next: linked_list::Address::Nil
     };
 
+    // Append other words
     for word in words {
         head.append(word);
     }
